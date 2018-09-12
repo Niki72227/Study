@@ -73,7 +73,7 @@ while i > 0 {
 
 //Dictionaries
 
-
+/*
 var dict = ["John Black" : 10, "Katrin Snow" : 8, "Eddy Maxwell" : 6, "Ned Ford" : 12, "Barry White" : 4]
 
 dict.updateValue(9, forKey: "Katrin Snow")
@@ -129,9 +129,68 @@ for (index, letter) in chessLetters.enumerated() {
     }
 }
 
-
+*/
 
 // Switch
+
+var str = "Lorem ipsum dolor sit amet 12, voluptatem fermentum id vivamus 53 potenti consectetuer, odio justo neque molestie, facilisis ligula luctus eget 4 tempora feugiat, ac 10000 ultrices ut lacinia lacus suscipit. Velit gravida amet sed aliquet consequat pulvinar, euismod mattis ut pharetra mauris. Eu maecenas. Erat parturient mollis ac integer amet quisque, nec in nulla, aute nonummy risus quis consectetuer, lorem sit sem ante wisi elementum! Expedita maecenas dignissim tristique maxime nunc.Malesuada 3457437 3 dignissim potenti? Minim nunc 2314 tempor eget nullam nulla risus, odio aliquam a? Mauris fames mi ipsum vitae a purus, rutrum imperdiet fusce vestibulum enim 12 ipsum mauris, integer nec 678768 dolor lobortis viverra taciti, pulvinar sed vestibulum 780670 habitant sed torquent mus, purus diam integer! In sem, 3457 non dui egestas 1234547 nulla ultricies varius 37458 ipsum, diamlorem vel tempus libero libero erat. Eget habitant hendrerit nunc, quisque aenean at eget, interdum 675679 nostrum tellus, felis felis mattis nec, quis 6780768 scelerisque lectus. Diam quis 78068 mi augue a amet, tortor netus, vitae inceptos posuere vitae ullamcorper? Wisi 2341 aliquam ipsum sit ante viverra, pellentesque ipsum maecenas dui mi, justo et aliquet 12341235 vel dui, tristique malesuada cursus nibh et, pretium aenean condimentum a luctus fusce. Justo ornare aliquam commodo, tempor mauris!"
+
+var vowel = 0
+var consonant = 0
+var punMarks = 0
+var numbers = 0
+
+for i in str {
+    switch i {
+    case "A", "a", "E", "e", "Y", "y", "U", "u", "I", "i", "O", "o":
+        vowel += 1
+    case "Q", "q", "W", "w", "R", "r", "T", "t", "P", "p", "S", "s", "D", "d", "F", "f", "G", "g", "H", "h", "J", "j", "K", "k", "L", "l", "Z", "z", "X", "x", "C", "c", "V", "v", "B", "b", "N", "n","M", "m":
+        consonant += 1
+    case ".", ",", "!", "?":
+        punMarks += 1
+    case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
+        numbers += 1
+    default:
+        break
+    }
+}
+print("This text consists of \(vowel) vowels, \(consonant) consonants, \(punMarks) punctual marks and \(numbers) numbers")
+
+
+var age = 148
+var status = String()
+switch age {
+case 0...3: status = "Infancy"
+case 4...6: status = "Early Childhood"
+case 7...9: status = "Middle Childhood"
+case 10...11: status = "Late Childhood"
+case 12...20: status = "Adolescence"
+case 20...35: status = "Early Adulthood"
+case 36...50: status = "Midlife"
+case 50...80: status = "Mature Adulthood"
+case 80...146: status = "Late Adulthood"
+case 147...Int.max: status = "Immortality"
+default:
+    break
+}
+print(status)
+
+
+var firstName = "John"
+var secondName = "Snow"
+var fatherName = "Rhaegarovich"
+
+switch firstName.first {
+case "A", "O":
+    print("Hello, \(firstName)")
+case _ where fatherName.first == "V" || fatherName.first == "D":
+    print("Hello, \(firstName) \(fatherName)")
+case _ where secondName.first == "E" || secondName.first == "Z":
+    print("Hello, \(secondName)")
+default:
+    print("Hello, \(firstName) \(fatherName) \(secondName)")
+}
+
 
 
 
